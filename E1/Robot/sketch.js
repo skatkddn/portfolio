@@ -1,30 +1,52 @@
 function setup() {
-  createCanvas(1000,1000); //create canvas size 
+  createCanvas(720,480); //create canvas size 
   smooth(); 
   strokeWeight(2); //define strokes' thickness 
 }
 
 function draw(){
-  background(255); //gray background //if this is not existed the robot would be drawn overlapped
-  translate(mouseX,mouseY); // the image follows mouse XY position
-
-fill(0); //fill black color
-ellipse(300,300,200,200); //The biggist ellipse
-fill(255);//white color on rectangle hiding half of the biggest ellipse 
-noStroke(0); //no stroke on rectangle
-rect(100,200,200,200); //The white rectangle( x,y position & size)
-fill(0); //black color on the second biggest ellipse placed at the bottom of the biggist ellipse 
-ellipse(300,350,100,100); //the second biggest ellipse (x,y position & size)
-fill(255); //white color on the second biggest ellipse placed at the top of the biggist ellipse 
-ellipse(300,250,100,100);//the second biggest ellipse (x,y position & size)
-fill(255); //while color on the smallest ellipse placed in the second black ellipse
-ellipse(300,350,30,30); //the smallest ellipse (x,y position & size)
-fill(0); //black color on the smallest ellipse placed in the second white ellipse
-ellipse(300,250,30,30); //the smallest ellipse (x,y position & size)
-stroke(0); //ellipse stroke color (black)
-noFill(); //no fill on the ellipse 
-strokeWeight(2); // stroke thickness
-ellipse(300,300,200,200); // ellipse size 
+  background(205); //gray background //if this is not existed the robot would be drawn overlapped
+  translate(mouseX, mouseY); //Mouse tracking
+  
+  //Neck 
+  stroke(102); //type of stroke 
+  line (266, 257, 266, 162); //The first line of neck 
+  line (276, 257, 276, 162); //The second line of neck 
+  line (286, 257, 286, 162); //The third line of neck 
+  
+  
+  //Antennae
+  line (276, 155, 246, 112); //The first line of Antennae 
+  line (276, 155, 306, 56); //The second line of Antennae 
+  line (276, 155, 347, 170); //The third line of Antennae 
+  
+  
+  //Body 
+  noStroke();
+  fill(102); // Gray Color on ellipse
+  ellipse(264,377,66,66); // ellipse is placed at the bottom 
+  fill(0); //Black color on black rectangle body
+  rect(219,257,90,120); // Black rectangle body 
+  fill(102); //Gray Color on rectangle
+  rect(219, 274, 90, 6) // Gray line on the black rectangle body 
+  
+  
+  //Head 
+  fill(0); //Black color on head ellipse 
+  ellipse(276,155,90,90); // The biggest ellipse on head 
+  fill(255); // White color 
+  ellipse(288, 150, 28, 28); //The while ellipse on head 
+  fill(0); // Black color
+  ellipse(288,150,6,6);  // The black dot in white ellipse 
+  fill (153); //Gray Color
+  ellipse(263,148,10,10); // One of the three dots on head 
+  ellipse(296,130,8,8); // One of the three dots on head 
+  ellipse(305,162,6,6); // One of the three dots on head 
+  
+  
+  
+  
+  
 
   
 }
