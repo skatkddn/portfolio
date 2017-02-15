@@ -1,155 +1,172 @@
-var dir = 7; // moving speed
+/* Created by Sang Woo Nam 
+   Last edited 2/14/2017
+   Created a lego family
+*/
+
+var dir = 7; // sets moving speed
 // value for father
-var a = 18; // father's top left corner x value 
-var b = 15; // father's top left corner y value
-
+var FatherX = 18; // father's top left corner x value 
+var FatherY = 15; // father's top left corner y value
 // value for mother
-var c = 18; // mother's top left corner x value
-var d = 787; // mother's top left corner y value
-
+var MotherX = 18; // mother's top left corner x value
+var MotherY = 787; // mother's top left corner y value
 // value for son
-var e = 926; // son's top left corner x value
-var f = 66; // son's top left corner y value
-
+var SonX = 926; // son's top left corner x value
+var SonY = 66; // son's top left corner y value
 // value for baby
-var g = 926; // baby's top left corner x value
-var h = 853; // baby's top left corner y value
-
-
+var BabyX = 926; // baby's top left corner x value
+var BabyY = 853; // baby's top left corner y value
 
 function setup() {
-  
-  // Canvas Size 
+  // set up Canvas Size 1000 * 1000 
   createCanvas(1000, 1000);
-  
 }
 
 function draw() {
-  
   // background color
   background(216, 255, 251);
-  
   // father 
   // father's hair
-  noStroke(); // no stroke 
-  fill(228,255,0); // fill yellow color 
-  quad(a, b, a+51, b, a+51, b+36, a, b+36); // father's hair position
-  
+  // no stroke 
+  noStroke(); 
+  // fill yellow color
+  fill(228,255,0);  
+  // sets father's hair position
+  quad(FatherX, FatherY, FatherX+51, FatherY, FatherX+51, FatherY+36, FatherX, FatherY+36); 
   // father's face 
-  noStroke(); 
-  fill(245,204,160); // fill skin color 
-  quad(a, b+36, a+51, b+36, a+51, b+85, a, b+85); // father's face position
-  
+  // fill skin color 
+  fill(245,204,160); 
+  // sets father's face position
+  quad(FatherX, FatherY+36, FatherX+51, FatherY+36, FatherX+51, FatherY+85, FatherX, FatherY+85); 
   // father's body 
-  noStroke(); 
-  fill(0, 166, 81); // fill green color 
-  quad(a, b+85, a+51, b+85, a+51, b+135, a, b+135); // father's body position
-  
+  // fill green color 
+  fill(0, 166, 81); 
+  // sets father's body position
+  quad(FatherX, FatherY+85, FatherX+51, FatherY+85, FatherX+51, FatherY+135, FatherX, FatherY+135); 
   // father's pants 
-  noStroke();
-  fill(250, 110, 170); // fill pink color 
-  quad(a, b+135, a+51, b+135, a+51, b+175, a, b+175); //father's pants positon
-  
+  // fill pink color
+  fill(250, 110, 170);  
+  // sets father's pants positon
+  quad(FatherX, FatherY+135, FatherX+51, FatherY+135, FatherX+51, FatherY+175, FatherX, FatherY+175); 
   // father movement
-  a = a + dir; // dir adds to x every single time 
-  
-  if(a > 294) { // moving x direction until 294
-    // directions
-    a = max(294); // stop moving x direction at 294
-    b = b + dir; // start moving y direction
-     if(b > 364) { // moving y direction until 294
-       b = max(364); // stop moving y direction at 364
-     }
+  // sets father's speed on x axis
+  FatherX = FatherX + dir; 
+  // moving x direction until x == 294
+  if (FatherX > 294) { 
+    // sets max value of x position 294
+    FatherX = max(0, 294); 
+    // sets father's speed on y axis
+    FatherY = FatherY + dir; 
+    // moving y direction until y == 294
+     if (FatherY > 364) { 
+       // sets max value of y position 294
+       FatherY = max(0, 364); 
+      }
   }
-  
   // mother 
   // mother's hair
-  noStroke(); // no stroke 
-  fill(228,255,0); // fill yellow color 
-  quad(c, d, c+51, d, c+51, d+24, c, d+24); // mother's hair position 
-  
+  // no stroke
+  noStroke();  
+  // fill yellow color 
+  fill(228,255,0); 
+  // sets mother's hair position
+  quad(MotherX, MotherY, MotherX+51, MotherY, MotherX+51, MotherY+24, MotherX, MotherY+24);  
   // mother's face 
-  noStroke();  
-  fill(245,204,160); // fill skin color 
-  quad(c, d+24, c+51, d+24, c+51, d+75, c, d+75); // mother's face position  
-  
+  // fill skin color
+  fill(245,204,160);  
+  // sets mother's face position
+  quad(MotherX, MotherY+24, MotherX+51, MotherY+24, MotherX+51, MotherY+75, MotherX, MotherY+75);   
   // mother's body 
-  noStroke();  
-  fill(247,148,28); // fill cloth color 
-  quad(c, d+75, c+51, d+75, c+51, d+162, c, d+162); // mother's face position
-
+  // fill cloth color
+  fill(247,148,28);
+  // sets mother's face position
+  quad(MotherX, MotherY+75, MotherX+51, MotherY+75, MotherX+51, MotherY+162, MotherX, MotherY+162); 
   // mother's foot 
-  noStroke();  
-  fill(245,204,160); // fill skin color 
-  quad(c, d+162, c+51, d+162, c+51, d+183, c, d+183); // mother's foot position  
-  
+  // fill skin color 
+  fill(245,204,160);  
+  // sets mother's foot position
+  quad(MotherX, MotherY+162, MotherX+51, MotherY+162, MotherX+51, MotherY+183, MotherX, MotherY+183);   
   // mother movement
-  c = c + dir; // dir adds to x every single time
-  
-  if(c > 400) { // moving x direction until 400
-    // directions
-    c = max(400); // stop moving x direction at 400
-    d = d - dir; // start moving y direction
-     if(d < 358) { // moving y direction until 358
-       d = min(358); // stop moving y direction at 358
+  // sets mother's speed on x axis
+  MotherX = MotherX + dir;
+  // moving x direction until 400
+  if (MotherX > 400) { 
+    // sets max value of x position 400
+    MotherX = max(0, 400); 
+    // sets mother's speed on y axis
+    MotherY = MotherY - dir; 
+    // moving y direction until x == 358
+     if (MotherY < 358) { 
+       // sets min value of y position 358
+       MotherY = min(358, 358); 
      }
   }
-  
   // son 
   // son's hair
-  noStroke(); // no stroke 
-  fill(228,255,0); // fill yellow color 
-  quad(e, f, e+51, f, e+51, f+18, e, f+18); // son's hair position 
-  
-  // son's face 
+  // no stroke
   noStroke();  
-  fill(245,204,160); // fill skin color 
-  quad(e, f+18, e+51, f+18, e+51, f+56, e, f+56); // son's face position  
-  
+  // fill yellow color
+  fill(228,255,0);  
+  // sets son's hair position
+  quad(SonX, SonY, SonX+51, SonY, SonX+51, SonY+18, SonX, SonY+18);  
+  // son's face 
+  noStroke();
+  // fill skin color
+  fill(245,204,160);  
+  // sets son's face position 
+  quad(SonX, SonY+18, SonX+51, SonY+18, SonX+51, SonY+56, SonX, SonY+56);  
   // son's body 
   noStroke();  
-  fill(239,76,20); // fill cloth color 
-  quad(e, f+56, e+51, f+56, e+51, f+94, e, f+94); // son's cloth position
-
+  // fill cloth color 
+  fill(239,76,20); 
+  // sets son's cloth position
+  quad(SonX, SonY+56, SonX+51, SonY+56, SonX+51, SonY+94, SonX, SonY+94); 
   // son's pants 
   noStroke();  
-  fill(0,174,239); // fill pants color 
-  quad(e, f+94, e+51, f+94, e+51, f+136, e, f+136); // mother's foot position  
-  
-  // mother movement
-  e = e - dir; // dir substract from x every single time
-  
-  if(e < 513) { // moving x direction until 513
-    // directions
-    e = min(513); // stop moving x direction at 513
-    f = f + dir; // start moving y direction
-     if(f > 405) { // moving y direction until 405
-       f = max(405); // stop moving y direction at 405
+  // fill pants color
+  fill(0,174,239);  
+  // set son's foot position
+  quad(SonX, SonY+94, SonX+51, SonY+94, SonX+51, SonY+136, SonX, SonY+136);   
+  // sets son's speed on x axis
+  SonX = SonX - dir;
+  // moving x direction until 513
+  if(SonX < 513) {
+    // sets min value of x position 513
+    SonX = min(513, 513);
+    // sets son's speed on y axis
+    SonY = SonY + dir;
+    // moving y direction until x == 405
+     if(SonY > 405) { 
+       // sets max value of y position 513
+       SonY = max(0, 405); 
      }
   }  
-  
   // baby
-  
   // baby's face 
+  // noStroke
   noStroke();  
-  fill(245,204,160); // fill skin color 
-  quad(g, h, g+51, h, g+51, h+37, g, h+37); // son's face position  
-  
+  // fill skin color
+  fill(245,204,160);  
+  // sets son's face position
+  quad(BabyX, BabyY , BabyX+51, BabyY, BabyX+51, BabyY+37, BabyX, BabyY+37);   
   // baby's cloth 
-  noStroke();  
-  fill(0,174,239); // fill cloth color 
-  quad(g, h+37, g+51, h+37, g+51, h+117, g, h+117); // son's cloth position
-
-  
-  // mother movement
-  g = g - dir; // dir substract from x every single time
-  
-  if(g < 622) { // moving x direction until 622
-    // directions
-    g = min(622); // stop moving x direction at 622
-    h = h - dir; // start moving y direction
-     if(h < 425) { // moving y direction until 425
-       h = min(425); // stop moving y direction at 425
+  // fill cloth color 
+  fill(0,174,239); 
+  // sets son's cloth position
+  quad(BabyX, BabyY+37, BabyX+51, BabyY+37, BabyX+51, BabyY+117, BabyX, BabyY+117); 
+  // Baby's movement
+  // sets Baby's speed on x axis
+  BabyX = BabyX - dir;
+  // moving x direction until 622
+  if(BabyX < 622) { 
+    // sets min value of x position 622
+    BabyX = min(622, 622); 
+    // sets Baby's speed on y axis
+    BabyY = BabyY - dir;
+    // moving y direction until x == 425
+     if(BabyY < 425) { 
+       // sets min value of y position 425
+       BabyY = min(425, 425);
      }
   }
 }
