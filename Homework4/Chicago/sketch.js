@@ -1,6 +1,6 @@
 /* Written by Sang Woo Nam 
    Last edited 02/11/2017
-   Created a tree making fruits
+   Created a tree making Chicago
 */
 
 var cities = [];  // sets arrays in value (cities)

@@ -1,23 +1,23 @@
 function setup() {
  createCanvas(1000,1054);
  
- //triangle 
- noStroke(0); //no stroke
+ // triangle 
+ noStroke(0); // no stroke
  fill(159,182,46); // fill green color 
- triangle(79,354,79,378,100,367); //triangle position 
+ triangle(79,354,79,378,100,367); // triangle position 
 
- //Green line 
- stroke(171,214,170);//green color RGB
+ // Green line 
+ stroke(171,214,170);// green color RGB
  strokeWeight(2); // line thickness 
- line(39, 410, 283,284); //line postion 
+ line(39, 410, 283,284); // line postion 
  
- //circle 
- noStroke(0); //no stroke 
- fill(0,91,172); //fill blue color 
+ // circle 
+ noStroke(0); // no stroke 
+ fill(0,91,172); // fill blue color 
  ellipse(39,410,20,20);// ellipse position and size 
  
- //circle 
- noStroke(0); //no stroke 
+ // circle 
+ noStroke(0);
  fill(51,175,68); //fill green color 
  ellipse(283,284,20,20);// ellipse position and size
  
