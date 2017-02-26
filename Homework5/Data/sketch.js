@@ -15,7 +15,7 @@ var populationRank= [
   1059080, 1052343, 965866, 868799, 790701, 697012, 624592
   ];
 
-// states' names
+// array of states' names
 var stateName = [
   "United States","California",	"Texas", "Florida", "New York", "Pennsylvania", "Illinois", "Ohio", "Georgia", "North Carolina", "Michigan",
   "New Jersey", "Virginia", "Washington", "Arizona", "Massachusetts", "Tennessee", "Indiana", "Missouri", "Maryland", "Wisconsin", "Colorado",
@@ -24,7 +24,7 @@ var stateName = [
   "Delaware", "South Dakota", "North Dakota", "Vermont", "Wyoming"
   ];
 
-// sets forty nine images in img folder
+// preload forty nine images in img folder
 function preload() {
   for (var i = 0; i < 50; i++) {
     state[i] = loadImage('img/state' + i + '.png');
